@@ -100,12 +100,49 @@ max-width: 70rem;
 
 .home-container h1{
     font-weight: 800;
-    font-size: 5.7rem;
+    font-size: 6.1rem;
     line-height: 1.5 ;
 }
 
 
-.animated-text{
+.home-container .animated-text{
     position: relative;
-    
+    width: 55rem;
+}
+
+.home-container .animated-text h3{
+font-size: 2.8rem;
+font-weight: 600;
+color: transparent;
+line-height: 1.3;
+-webkit-text-stroke: 1px var(--main-color);
+
+}
+
+.home-container p{
+    font-size: 1.5em;
+    padding: 2rem 0 4rem;
+}
+
+.btn-box, .btn-box a{
+    position: relative;
+    display: flex;
+    width: 35rem;
+    height: 5rem;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 800;
+    border: none;
+    border-radius: 50px;
+
+}
+
+.btn-box .btn {
+position: relative;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 15rem;
+height: 100%;
+background:#00abf0;
 }
