@@ -177,10 +177,11 @@ font-size: 20px;
 color: var(--main-color);
 
 
+
 }
 
 .social-icon a:hover{
 background-color: blue;
-
+transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
