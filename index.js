@@ -1,5 +1,5 @@
-// Smooth scrolling for the navigation links
-$(document).ready(function(){
+$(document).ready(function() {
+    // Smooth scrolling for navigation links
     $('a.nav-link').on('click', function(event) {
         if (this.hash !== "") {
             event.preventDefault();
@@ -11,30 +11,59 @@ $(document).ready(function(){
             });
         }
     });
-    
-    // Typing effect for "Cybersecurity Engineer" on home page
+
+    // Typing effect for "Cybersecurity Engineer" roles
     var roles = ['Cybersecurity Engineer', 'Penetration Tester', 'Security Analyst'];
     var roleElement = document.getElementById('role');
-    
     let index = 0;
     setInterval(() => {
         roleElement.innerHTML = roles[index];
         index = (index + 1) % roles.length;  // Loop through the roles array
     }, 4000); // Change role every 4 seconds
-});
-
-// Smooth scroll for the navbar links
-$(document).ready(function() {
-    $('.nav-link').on('click', function(e) {
-        if (this.hash !== "") {
-            e.preventDefault();
-            var hash = this.hash;
-
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function() {
-                window.location.hash = hash;
-            });
+    
+    // Skill card hover effect (using jQuery for smooth hover transitions)
+    $('.skill-card').hover(
+        function() {
+            // On mouse enter, highlight the card
+            $(this).css('transform', 'scale(1.05)');
+            $(this).css('box-shadow', '0 6px 12px rgba(0, 0, 0, 0.3)');
+        }, 
+        function() {
+            // On mouse leave, return the card to normal
+            $(this).css('transform', 'scale(1)');
+            $(this).css('box-shadow', '0 4px 8px rgba(0, 0, 0, 0.2)');
         }
-    });
+    );
+
+    // Tooltip for skills (optional: using Bootstrap tooltips or custom tooltips)
+    $('.skill-icon').attr('title', 'Click for more info'); // Add title as tooltip text
+    
+    // If using Bootstrap tooltips, you can initialize them like this:
+    // $('[data-toggle="tooltip"]').tooltip();
+    
+    // Dynamic tooltip for skills (manual approach if Bootstrap is not used)
+    $('.skill-card').hover(
+        function() {
+            var skillDescription = $(this).find('h3').text();
+            var tooltip = $('<div class="tooltip">'+ skillDescription +'</div>').css({
+                position: 'absolute',
+                background: '#0b1023',
+                color: '#fff',
+                padding: '5px 10px',
+                borderRadius: '5px',
+                fontSize: '12px',
+                boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)'
+            });
+            $('body').append(tooltip);
+            $(this).mousemove(function(event) {
+                tooltip.css({
+                    top: event.pageY + 10 + 'px',
+                    left: event.pageX + 10 + 'px'
+                });
+            });
+        }, 
+        function() {
+            $('.tooltip').remove(); // Remove tooltip on mouse leave
+        }
+    );
 });

@@ -341,3 +341,352 @@ body, html {
         font-size: 15px;
     }
 }
+
+
+/* skills section ccss */
+.skills-section {
+    padding: 60px 20px; /* Reduced padding for smaller screens */
+    background-color: #0b1023;
+    color: #fff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 28px; /* Slightly smaller for mobile screens */
+    color: #00ff85;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.skills-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.skill-card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px); /* Adds a hover effect */
+}
+
+.skill-icon {
+    font-size: 40px;
+    color: #00ff85;
+    margin-bottom: 10px;
+}
+
+.skill-card h3 {
+    font-size: 20px; /* Adjusted for mobile */
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.skill-card ul {
+    list-style-type: none;
+    padding: 0;
+    color: #bbb;
+}
+
+.skill-card ul li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Responsive Styles */
+
+/* For screens between 5 inches and 8 inches, like phones and small tablets */
+@media (max-width: 768px) {
+    .skills-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-card {
+        width: 80%; /* Stretch skill cards for smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .skill-card {
+        width: 100%; /* Full width on very small screens */
+    }
+
+    .section-title {
+        font-size: 24px; /* Smaller titles for better fit */
+    }
+
+    .section-subtitle {
+        font-size: 14px;
+    }
+
+    .skill-card h3 {
+        font-size: 18px; /* Adjust font size */
+    }
+
+    .skill-icon {
+        font-size: 36px; /* Slightly smaller icons for smaller screens */
+    }
+
+    .skill-card ul li {
+        font-size: 12px; /* Adjust text size for readability */
+    }
+}
+
+@media (max-width: 1024px) {
+    .skills-row {
+        justify-content: center;
+    }
+
+    .skill-card {
+        width: 45%; /* Display 2 cards per row for small tablets */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    .skills-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-card {
+        width: 90%; /* Reduce width for very small devices */
+        margin-bottom: 20px;
+    }
+}
+
+/* education  */
+
+/* Education Section */
+.education-section {
+    padding: 80px 0;
+    background-color: #0b1023; /* Match background color */
+    color: #fff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #fff; /* White text for the title */
+}
+
+/* Timeline Style */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #00ff85;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: left;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-item .timeline-content {
+    padding: 20px 30px;
+    background-color: #1e1e1e;
+    position: relative;
+    border-radius: 6px;
+    color: #fff;
+    border: 1px solid #00ff85;
+}
+
+.timeline-item.left .timeline-content {
+    margin-left: 0;
+}
+
+.timeline-item.right .timeline-content {
+    margin-left: auto;
+}
+
+.timeline-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #00ff85;
+}
+
+.timeline-item h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.timeline-item p {
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* Circles for each event */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: #0b1023;
+    border: 4px solid #00ff85;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item.right::before {
+    left: -10px;
+    right: auto;
+}
+
+/* Horizontal line connecting the timeline to the content box */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 80px; /* Length of the horizontal line */
+    height: 2px;
+    border-top: 2px dotted #00ff85; /* Dotted horizontal line */
+    top: 30px; /* Align with the content box */
+    right: -70px; /* Adjust based on circle position */
+}
+
+.timeline-item.right::after {
+    left: -70px;
+    right: auto;
+}
+
+/* Date on the opposite side of the main timeline */
+.timeline-item .timeline-date {
+    position: absolute;
+    top: 20px;
+    font-size: 16px;
+    color: #00ff85;
+}
+
+.timeline-item.left .timeline-date {
+    right: -110px; /* Position the date on the opposite side of the main line */
+}
+
+.timeline-item.right .timeline-date {
+    left: -110px; /* Position the date on the opposite side of the main line */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-item.left, .timeline-item.right {
+        left: 0;
+        width: 100%;
+        text-align: center; /* Center items on smaller screens */
+    }
+    
+    .timeline-item .timeline-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .timeline::after {
+        left: 20px; /* Move timeline line to left on small screens */
+    }
+
+    .timeline-item::before {
+        left: 15px;
+    }
+
+    .timeline-item.right .timeline-content {
+        margin-left: 0;
+    }
+
+    /* Date for small screens */
+    .timeline-item .timeline-date {
+        top: -20px;
+        right: auto;
+        left: auto;
+    }
+
+    /* Adjust text sizes for small screens */
+    .timeline-item h3 {
+        font-size: 16px;
+    }
+
+    .timeline-item h4 {
+        font-size: 20px;
+    }
+
+    .timeline-item p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .timeline-item.left, .timeline-item.right {
+        left: 0;
+        width: 100%;
+        text-align: center; /* Center items on smaller screens */
+    }
+
+    .timeline-item .timeline-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item::before {
+        left: 15px;
+    }
+
+    .timeline-item.right .timeline-content {
+        margin-left: 0;
+    }
+
+    /* Further adjust text sizes for very small screens */
+    .timeline-item h3 {
+        font-size: 14px;
+    }
+
+    .timeline-item h4 {
+        font-size: 18px;
+    }
+
+    .timeline-item p {
+        font-size: 12px;
+    }
+}
