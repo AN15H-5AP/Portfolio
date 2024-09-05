@@ -1,86 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anish Portfolio</title>
+    <title>Anish Sapkota</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
-
 <body>
-    <!-- header profile for the code consist logo and nav bar -->
-    <header class="header">
-        <!-- logo of the site included -->
-        <a href="#logo" class="logo"> <script src="https://tryhackme.com/badge/2610825"></script>
-        </a>
-
-        <div class="bx-menu" id="menu-icon">
-
-
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="" class="logo">@N15H
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blogs">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary" href="#Contact-me">Contacts</a></li>
+                </ul>
+            </div>
         </div>
+    </nav>
 
-        <!-- nav menu are located -->
-        <nav class="navbar">
-            <a href="#home" class="active">Home </a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact </a>
-        </nav>
-        <!-- nav bar menu ends here -->
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1>Hello, I'm <span>Anish Sapkota</span></h1>
+                    <h2 class="animated-title">Cyber Security Aspirants</h2>
+                    <p>A cybersecurity engineer and Researcher.I specialize in identifying vulnerabilities and enhancing digital security through hands-on testing and research.</p>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="col-md-6">
+                    <!-- 3D Image -->
+                    <img src="./anish_portfolio.png" alt="Cybersecurity Expert" class="img-fluid">
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- <div class="tryhackme">
-        <script src="https://tryhackme.com/badge/2610825"></script>
-        <img src="https://tryhackme-badges.s3.amazonaws.com/AN15H.png" alt="TryHackMe">
 
-    </div> -->
-
-    <!-- code for home section  start -->
-    <section class="home" id="home">
-        <!-- //tryhack me badge -->
-     
-        <div class="home-container">
-            <h1>Hi, I'm <span>Anish Sapkota</span></h1>
-            <div class="animated-text">
-                <h3>Cyber Security Aspirants</h3>
+    <!-- About Me Section -->
+<section id="about" class="about-me-section">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar for Personal Info -->
+            <div class="col-lg-3 col-md-4">
+                <div class="sidebar">
+                    <img src="./anish.jpg" alt="Profile Picture" class="img-fluid profile-picture">
+                    <h3>Sapkota Anish</h3>
+                    <p class="job-title">Cybersecurity Engineer</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> devil911@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +977 9865060900</p>
+                        <p><i class="fas fa-birthday-cake"></i> Feb 7, 2002</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Panchkhal-6, Kavrepalanchok, Nepal</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p>
-                Enthusiastic and dedicated cybersecurity aspirant with a strong foundation in 
-                networkingand programming. Currently pursuing a degree in Cybersecurity and actively engaged in
-                honing skills through hands-on projects. Demonstrated knowledge of packet sniffers,
-                keyloggers, and data recovery techniques.
-                    Eager to apply theoretical knowledge in a practical
-                setting and committed to continuous learning in the ever-evolving cybersecurity landscape.
-            </p>
 
-            <!-- button for the main container -->
-            <div class="btn-box">
-                <a href="#contact-btn" class="btn">Contact Me</a>
+            <!-- Main Content -->
+            <div class="col-lg-9 col-md-8">
+                <div class="about-content">
+                    <h2>About Me</h2>
+                    <p>
+                        I'm a Cybersecurity Engineer with a deep understanding of web security, network analysis, and data protection. 
+                        My role involves identifying and mitigating risks, implementing secure systems, and ensuring data integrity. 
+                        I have worked on various projects and provided consultancy services to enhance the cybersecurity infrastructure 
+                        of companies worldwide.
+                    </p>
+
+                    <h3>What I’m Doing</h3>
+                    <div class="row services">
+                        <div class="col-md-6">
+                            <div class="service-card">
+                                <i class="fas fa-laptop-code"></i>
+                                <h4>Web Security</h4>
+                                <p>Ensuring top-notch security for web applications to prevent data breaches.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-card">
+                                <i class="fas fa-network-wired"></i>
+                                <h4>Network Security</h4>
+                                <p>Safeguarding network infrastructures and detecting vulnerabilities.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-card">
+                                <i class="fas fa-user-secret"></i>
+                                <h4>Ethical Hacking</h4>
+                                <p>Testing systems for potential threats through penetration testing.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-card">
+                                <i class="fas fa-database"></i>
+                                <h4>Data Encryption</h4>
+                                <p>Securing sensitive data with advanced encryption methods.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Testimonials</h3>
+                    <div class="testimonial">
+                        <p><strong>Anonymous:</strong> Richard's expertise in network security has been invaluable. He helped us set up strong defenses.</p>
+                    </div>
+                    <div class="testimonial">
+                        <p><strong>B4g Hunter:</strong> We were very pleased with Richard's work in securing our web application. Highly recommend!</p>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- social icons addinh -->
-        <div class="social-icon">
-            <a href="https://www.facebook.com/profile.php?id=100090626087028&mibextid=ZbWKwL" target="_blank"><i class='bx bxl-facebook'></i></a>
-            <a href="https://www.linkedin.com/in/anish-sapkota-98b571289" target="_blank"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://twitter.com/im_d3v1l" target="_blank"><i class='bx bxl-twitter'></i></a>
-            <a href="https://github.com/AN15H-5AP" target="_blank"><i class='bx bxl-github'></i></a>
-        </div>
-
-        <!-- <div class="profile-image">
-            <img src="/images/background.png" alt="" srcset="">
-        </div> -->
+    </div>
+</section>
 
 
-    </section>
-
-    <script src="/script.js"></script>
-
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
