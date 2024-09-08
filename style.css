@@ -8,6 +8,9 @@ body, html {
 
 .navbar {
     padding: 20px 0;
+    posititon: fixed;
+    opacity: 0;
+    transistion: opacity 0.5s;
 }
 
 .navbar .navbar-brand {
