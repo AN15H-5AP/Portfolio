@@ -12,19 +12,21 @@ $(document).ready(function() {
     // Smooth scrolling for navigation links - FIXED
     $('a.nav-link[href^="#"]').on('click', function(event) {
         event.preventDefault();
-        
-        var target = $(this.getAttribute('href'));
+
+        var targetId = this.getAttribute('href');
+        var target = $(targetId);
+
         if (target.length) {
             var offset = 100; // Increased offset for fixed navbar
-            
+
             $('html, body').animate({
                 scrollTop: target.offset().top - offset
             }, 800, function(){
                 // Update URL hash after animation
                 if (history.pushState) {
-                    history.pushState(null, null, target.selector);
+                    history.pushState(null, null, targetId);
                 } else {
-                    window.location.hash = target.selector;
+                    window.location.hash = targetId;
                 }
             });
 
