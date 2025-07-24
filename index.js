@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     // Navbar scroll effect
     $(window).scroll(function() {
@@ -8,16 +9,23 @@ $(document).ready(function() {
         }
     });
 
-    // Smooth scrolling for navigation links
-    $('a.nav-link').on('click', function(event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            var offset = 80; // Account for fixed navbar height
+    // Smooth scrolling for navigation links - FIXED
+    $('a.nav-link[href^="#"]').on('click', function(event) {
+        event.preventDefault();
+        
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            var offset = 100; // Increased offset for fixed navbar
+            
             $('html, body').animate({
-                scrollTop: $(hash).offset().top - offset
+                scrollTop: target.offset().top - offset
             }, 800, function(){
-                window.location.hash = hash;
+                // Update URL hash after animation
+                if (history.pushState) {
+                    history.pushState(null, null, target.selector);
+                } else {
+                    window.location.hash = target.selector;
+                }
             });
 
             // Close mobile menu after clicking
@@ -32,42 +40,35 @@ $(document).ready(function() {
         let index = 0;
         setInterval(() => {
             roleElement.innerHTML = roles[index];
-            index = (index + 1) % roles.length;  // Loop through the roles array
-        }, 4000); // Change role every 4 seconds
+            index = (index + 1) % roles.length;
+        }, 4000);
     }
     
-    // Skill card hover effect (using jQuery for smooth hover transitions)
+    // Skill card hover effect
     $('.skill-card').hover(
         function() {
-            // On mouse enter, highlight the card
             $(this).css('transform', 'scale(1.05)');
             $(this).css('box-shadow', '0 6px 12px rgba(0, 0, 0, 0.3)');
         }, 
         function() {
-            // On mouse leave, return the card to normal
             $(this).css('transform', 'scale(1)');
             $(this).css('box-shadow', '0 4px 8px rgba(0, 0, 0, 0.2)');
         }
     );
 
-    // Tooltip for skills (optional: using Bootstrap tooltips or custom tooltips)
-    $('.skill-icon').attr('title', 'Click for more info'); // Add title as tooltip text
-    
-    // If using Bootstrap tooltips, you can initialize them like this:
-    // $('[data-toggle="tooltip"]').tooltip();
-    
-    // Dynamic tooltip for skills (manual approach if Bootstrap is not used)
+    // Dynamic tooltip for skills
     $('.skill-card').hover(
         function() {
             var skillDescription = $(this).find('h3').text();
-            var tooltip = $('<div class="tooltip">'+ skillDescription +'</div>').css({
+            var tooltip = $('<div class="custom-tooltip">'+ skillDescription +'</div>').css({
                 position: 'absolute',
                 background: '#0b1023',
                 color: '#fff',
                 padding: '5px 10px',
                 borderRadius: '5px',
                 fontSize: '12px',
-                boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)'
+                boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)',
+                zIndex: 9999
             });
             $('body').append(tooltip);
             $(this).mousemove(function(event) {
@@ -78,7 +79,24 @@ $(document).ready(function() {
             });
         }, 
         function() {
-            $('.tooltip').remove(); // Remove tooltip on mouse leave
+            $('.custom-tooltip').remove();
         }
     );
+
+    // Active navigation highlighting
+    $(window).scroll(function() {
+        var scrollPos = $(document).scrollTop() + 120;
+        
+        $('.nav-link[href^="#"]').each(function() {
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+            
+            if (refElement.length && refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $('.nav-link').removeClass("active");
+                currLink.addClass("active");
+            } else {
+                currLink.removeClass("active");
+            }
+        });
+    });
 });
