@@ -1,25 +1,40 @@
 $(document).ready(function() {
+    // Navbar scroll effect
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 50) {
+            $('.navbar').addClass('scrolled');
+        } else {
+            $('.navbar').removeClass('scrolled');
+        }
+    });
+
     // Smooth scrolling for navigation links
     $('a.nav-link').on('click', function(event) {
         if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
+            var offset = 80; // Account for fixed navbar height
             $('html, body').animate({
-                scrollTop: $(hash).offset().top
+                scrollTop: $(hash).offset().top - offset
             }, 800, function(){
                 window.location.hash = hash;
             });
+
+            // Close mobile menu after clicking
+            $('.navbar-collapse').collapse('hide');
         }
     });
 
-    // Typing effect for "Cybersecurity Engineer" roles
-    var roles = ['Cybersecurity Engineer', 'Penetration Tester', 'Security Analyst'];
-    var roleElement = document.getElementById('role');
-    let index = 0;
-    setInterval(() => {
-        roleElement.innerHTML = roles[index];
-        index = (index + 1) % roles.length;  // Loop through the roles array
-    }, 4000); // Change role every 4 seconds
+    // Typing effect for animated title
+    var roles = ['Cyber Security Aspirants', 'IPTV Administrator', 'Network Security Expert'];
+    var roleElement = document.querySelector('.animated-title');
+    if (roleElement) {
+        let index = 0;
+        setInterval(() => {
+            roleElement.innerHTML = roles[index];
+            index = (index + 1) % roles.length;  // Loop through the roles array
+        }, 4000); // Change role every 4 seconds
+    }
     
     // Skill card hover effect (using jQuery for smooth hover transitions)
     $('.skill-card').hover(
